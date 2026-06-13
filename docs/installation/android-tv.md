@@ -23,17 +23,13 @@ Just like on Android Mobile, there are two ways to install Nuvio on Android Mobi
 >[!NOTE]
 >It is recommened to download the universal release
 
-    It is recommened you download the universal version.
-    - Open the Google Play Store on both your phone and your Android TV. Search for and install the app Send files to TV on both devices.
-    - Enable unknown sources using the above steps in Option 1.
-    - Ensure your phone and TV are on the same Wi-Fi network. Open Send files to TV on your TV and select Receive.
-    - Open the app on your phone, select Send, locate the Nuvio APK in your downloads, and select your TV to push the file over.
-    - Select the file on the TV and install it.
-2.  **Enable Unknown Sources:**
-    - Go to **Settings** > **Apps** > **Install Unknown Apps**.
-    - Choose your browser or file manager and toggle **Allow from this source**.
-3.  **Install:** Open the downloaded APK and tap **Install**.
-4.  **Initial Launch:** Open Nuvio. You may be prompted to grant storage permissions and to allow nuvio to install unknown apps. This is to allow Nuvio to update itself.
+    - Open the Google Play Store on both your phone and your Android TV. Search for and              install the app Send files to TV on both devices.
+        - Enable unknown sources using the above steps in Option 1.
+        - Ensure your phone and TV are on the same Wi-Fi network. Open Send files to TV on your TV and select Receive.
+        - Open the app on your phone, select Send, locate the Nuvio APK in your downloads, and            select your TV to push the file over.
+        - Select the file on the TV and install it.
+
+3. Open Nuvio. You may be prompted to grant storage permissions and to allow nuvio to install unknown apps. This is to allow Nuvio to update itself.
 
 **Play Store**
 1. You can obtaine the Offical Nuvio Play Store version from [here](https://play.google.com/store/apps/details?id=com.nuvio.app&utm_source=na_Med)
