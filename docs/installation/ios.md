@@ -11,9 +11,11 @@ Nuvio on iOS typically requires **Sideloading** (AltStore/Sideloadly). Apple all
 
     - Download and install Sideloadly on your Mac or Windows PC. (Windows users: You still need the direct-download versions of iTunes and iCloud installed from Apple's website, not the Microsoft Store).
     
-2. Connect your iPhone:Plug your phone into your computer via USB. Unlock it and tap Trust This Computer if prompted.
+2. Connect your iPhone:
+    - Plug your phone into your computer via USB.
+    - Unlock it and tap Trust This Computer if prompted.
 
-3. Load the IPA file
+4. Load the IPA file
    
     - Open Sideloadly on your computer. Drag and drop your downloaded .ipa file directly into the Sideloadly window, or click the IPA icon on the left to browse your computer for the file.
     
