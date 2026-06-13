@@ -1,19 +1,17 @@
-# FAQ & Feature List
-
-## Features
-- [ ] Trakt Sync
-- [ ] Real-Debrid Support
-- [ ] Multi-addon Search
-- [ ] 4K Playback Support
-- [ ] Hardware Acceleration
-
-## FAQ
+# FAQ
 
 ### Is Nuvio free?
-Yes, Nuvio is free to use, though some addons or services (like Real-Debrid) may require a subscription.
+Yes, Nuvio is free and open source software (FOSS). Nuvio runs on donations. Please consider [donating](https://tapframe.space/contribute).
 
 ### Where can I get the official app?
-Visit the official Nuvio website (links to be added).
+Visit the official Nuvio ([website](https://nuvio.tv/)).
 
-### Does it work on Samsung/LG TVs?
-Currently, Nuvio is focused on Android-based TV systems and iOS.
+### What does it support?
+Currently, Nuvio runs on android mobile, androidtv, ios, webos, and tizen.
+
+### Why is the testflight full? When will there be spots?
+Apple provides 10k spots to developers. These spots are often fully filled and rarely become available.
+
+### What does it support?
+Currently, Nuvio runs on android mobile, androidtv, ios, webos, and tizen.
+
