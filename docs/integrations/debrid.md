@@ -8,7 +8,13 @@ Debrid services are high-speed downloaders that fetch files from hosters and tor
 
 ## 🚀 Supported Services
 
-### 1. Real-Debrid (RD)
+### 1. TorBox
+A fast-growing service that excels in Usenet support (pro teir only) alongside traditional torrent debrid.
+- **Pros:** No limit on IP usage, Native Usenet support (pro teir), fast caching, modern API.
+- **Cons:** Newer service (verify addon compatibility).
+- **Setup:** [torbox.app/settings](https://torbox.app)
+
+### 2. Real-Debrid (RD)
 The most popular and cost-effective service with the largest cache of files.
 > [!NOTE]
 > Real Debrid has recentley faced legal issues and a large amount of files are now being blocked. Your milage may vary based on usage of this service.
@@ -16,23 +22,17 @@ The most popular and cost-effective service with the largest cache of files.
 - **Cons:** Strict 1-IP rule (cannot use on two different internet connections at once).
 - **Setup:** [real-debrid.com/device](https://real-debrid.com/)
 
-### 2. AllDebrid (AD)
-A highly reliable alternative to Real-Debrid with excellent customer support and browser extensions.
-- **Pros:** Great reliability, high speeds, supports many hosters.
-- **Cons:** Slightly smaller cache than RD in some niche categories. 1 IP at once.
-- **Setup:** [alldebrid.com/pin](https://alldebrid.com)
-
-### 3. Premiumize.me (PM)
+### 3. Premiumize (PM)
 A premium all-in-one service that includes a personal cloud and a built-in VPN.
 - **Pros:** Personal cloud storage, 1TB limit, built-in VPN, allows multiple IPs (using "Points" system).
 - **Cons:** More expensive than RD/AD. Has a points system the equuates to about 1 TB a month.
 - **Setup:** [premiumize.me/device](https://premiumize.me)
 
-### 4. TorBox
-A fast-growing service that excels in Usenet support (pro teir only) alongside traditional torrent debrid.
-- **Pros:** No limit on IP usage, Native Usenet support (pro teir), fast caching, modern API.
-- **Cons:** Newer service (verify addon compatibility).
-- **Setup:** [torbox.app/settings](https://torbox.app)
+### 4. AllDebrid (AD)
+A highly reliable alternative to Real-Debrid with excellent customer support and browser extensions.
+- **Pros:** Great reliability, high speeds, supports many hosters.
+- **Cons:** Slightly smaller cache than RD in some niche categories. 1 IP at once.
+- **Setup:** [alldebrid.com/pin](https://alldebrid.com)
 
 ### 5. Offcloud / Put.io
 - **Offcloud:** Great for direct links and cloud downloads.
