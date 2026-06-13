@@ -19,7 +19,7 @@ The most popular and cost-effective service with the largest cache of files.
 > [!NOTE]
 > Real Debrid has recentley faced legal issues and a large amount of files are now being blocked. Your milage may vary based on usage of this service.
 - **Pros:** Massive cache(was?), affordable, high-speed servers.
-- **Cons:** Strict 1-IP rule (cannot use on two different internet connections at once).
+- **Cons:** Strict 1 IP rule (cannot use on two different internet connections at once), varying blocking of content
 - **Setup:** [real-debrid.com/device](https://real-debrid.com/)
 
 ### 3. Premiumize (PM)
