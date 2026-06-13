@@ -7,49 +7,27 @@
 
 Nuvio collections can be confusing. At its core though, it is a file system with folders and subfolders and files in those subfolders (catalogs). Below is a diagram to illustrate this.
 
-### Nuvio Collection Structures
+### Nuvio Collection Folder Architecture
 
 ```mermaid
-graph TD
-    %% Collection 1: Mainline Cinema & TV
-    subgraph Collection_1 [🎬 Collection 1: Mainline Cinema & TV]
-        C1Root[Main Interface] --> TMDB[TMDB Add-on]
-        C1Root --> Trakt[Trakt Integration]
-        
-        TMDB --> TMDBMovies[Trending Movies]
-        TMDB --> TMDBShows[Popular TV Shows]
-        
-        Trakt --> TraktWatchlist[Personal Watchlist]
-        Trakt --> TraktRecs[Trakt Recommendations]
-        
-        TMDBMovies -.-> Source1[Debrid / Provider Links]
-        TMDBShows -.-> Source1
-        TraktWatchlist -.-> Source1
-    end
+graph LR
+    Root["📁 my-collection/"] --> Manifest["📄 manifest.json"]
+    Root --> Assets["📁 assets/"]
+    Root --> Catalogs["📁 catalogs/"]
+    Root --> Config["📁 config/"]
 
-    %% Collection 2: Dedicated Anime Build
-    subgraph Collection_2 [⚔️ Collection 2: Dedicated Anime Build]
-        C2Root[Custom Interface] --> Kitsu[Kitsu Add-on]
-        C2Root --> AIO[AIO Metadata Add-on]
-        
-        Kitsu --> KitsuTrending[Trending Anime]
-        Kitsu --> KitsuAiring[Currently Airing]
-        
-        AIO --> AIOShounen[Custom Shounen Catalog]
-        AIO --> AIOMovies[Anime Feature Films]
-        
-        KitsuTrending -.-> Source2[Debrid / Nyaa Links]
-        KitsuAiring -.-> Source2
-        AIOShounen -.-> Source2
-    end
-    
-    %% Styling
-    classDef main fill:#2a2a2a,stroke:#333,stroke-width:2px,color:#fff
-    classDef addon fill:#005f73,stroke:#001219,stroke-width:2px,color:#fff
-    classDef category fill:#0a9396,stroke:#001219,stroke-width:2px,color:#fff
-    classDef source fill:#9b2226,stroke:#370617,stroke-width:2px,color:#fff
+    Assets --> Icon["🖼️ icon.png"]
+    Assets --> Fanart["🖼️ background.jpg"]
 
-    class C1Root,C2Root main
-    class TMDB,Trakt,Kitsu,AIO addon
-    class TMDBMovies,TMDBShows,TraktWatchlist,TraktRecs,KitsuTrending,KitsuAiring,AIOShounen,AIOMovies category
-    class Source1,Source2 source
+    Catalogs --> Movies["📄 movies.json"]
+    Catalogs --> TVShows["📄 tv_shows.json"]
+
+    Config --> Settings["📄 settings.json"]
+    Config --> Addons["📄 installed_addons.json"]
+
+    %% Styling 
+    classDef folder fill:#2d3748,stroke:#4a5568,stroke-width:2px,color:#fff
+    classDef file fill:#1a202c,stroke:#4a5568,stroke-width:1px,color:#e2e8f0
+
+    class Root,Assets,Catalogs,Config folder
+    class Manifest,Icon,Fanart,Movies,TVShows,Settings,Addons file
