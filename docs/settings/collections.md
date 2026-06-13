@@ -7,47 +7,49 @@
 
 Nuvio collections can be confusing. At its core though, it is a file system with folders and subfolders and files in those subfolders (catalogs). Below is a diagram to illustrate this.
 
+### Nuvio Collection Structures
+
 ```mermaid
 graph TD
     %% Collection 1: Mainline Cinema & TV
     subgraph Collection_1 [🎬 Collection 1: Mainline Cinema & TV]
-        C1_Root[Main Interface] --> TMDB[TMDB Add-on]
-        C1_Root --> Trakt[Trakt Integration]
+        C1Root[Main Interface] --> TMDB[TMDB Add-on]
+        C1Root --> Trakt[Trakt Integration]
         
-        TMDB --> TMDB_Movies[Trending Movies]
-        TMDB --> TMDB_Shows[Popular TV Shows]
+        TMDB --> TMDBMovies[Trending Movies]
+        TMDB --> TMDBShows[Popular TV Shows]
         
-        Trakt --> Trakt_Watchlist[Personal Watchlist]
-        Trakt --> Trakt_Recs[Trakt Recommendations]
+        Trakt --> TraktWatchlist[Personal Watchlist]
+        Trakt --> TraktRecs[Trakt Recommendations]
         
-        TMDB_Movies -.-> Content_Source_1[Debrid / Provider Links]
-        TMDB_Shows -.-> Content_Source_1
-        Trakt_Watchlist -.-> Content_Source_1
+        TMDBMovies -.-> Source1[Debrid / Provider Links]
+        TMDBShows -.-> Source1
+        TraktWatchlist -.-> Source1
     end
 
     %% Collection 2: Dedicated Anime Build
     subgraph Collection_2 [⚔️ Collection 2: Dedicated Anime Build]
-        C2_Root[Custom Interface] --> Kitsu[Kitsu Add-on]
-        C2_Root --> AIO[AIO Metadata Add-on]
+        C2Root[Custom Interface] --> Kitsu[Kitsu Add-on]
+        C2Root --> AIO[AIO Metadata Add-on]
         
-        Kitsu --> Kitsu_Trending[Trending Anime]
-        Kitsu --> Kitsu_Airing[Currently Airing]
+        Kitsu --> KitsuTrending[Trending Anime]
+        Kitsu --> KitsuAiring[Currently Airing]
         
-        AIO --> AIO_Shounen[Custom Shounen Catalog]
-        AIO --> AIO_Movies[Anime Feature Films]
+        AIO --> AIOShounen[Custom Shounen Catalog]
+        AIO --> AIOMovies[Anime Feature Films]
         
-        Kitsu_Trending -.-> Content_Source_2[Debrid / Nyaa Links]
-        Kitsu_Airing -.-> Content_Source_2
-        AIO_Shounen -.-> Content_Source_2
+        KitsuTrending -.-> Source2[Debrid / Nyaa Links]
+        KitsuAiring -.-> Source2
+        AIOShounen -.-> Source2
     end
     
     %% Styling
-    classDef main fill:#2a2a2a,stroke:#333,stroke-width:2px,color:#fff;
-    classDef addon fill:#005f73,stroke:#001219,stroke-width:2px,color:#fff;
-    classDef category fill:#0a9396,stroke:#001219,stroke-width:2px,color:#fff;
-    classDef source fill:#9b2226,stroke:#370617,stroke-width:2px,color:#fff;
+    classDef main fill:#2a2a2a,stroke:#333,stroke-width:2px,color:#fff
+    classDef addon fill:#005f73,stroke:#001219,stroke-width:2px,color:#fff
+    classDef category fill:#0a9396,stroke:#001219,stroke-width:2px,color:#fff
+    classDef source fill:#9b2226,stroke:#370617,stroke-width:2px,color:#fff
 
-    class C1_Root,C2_Root main;
-    class TMDB,Trakt,Kitsu,AIO addon;
-    class TMDB_Movies,TMDB_Shows,Trakt_Watchlist,Trakt_Recs,Kitsu_Trending,Kitsu_Airing,AIO_Shounen,AIO_Movies category;
-    class Content_
+    class C1Root,C2Root main
+    class TMDB,Trakt,Kitsu,AIO addon
+    class TMDBMovies,TMDBShows,TraktWatchlist,TraktRecs,KitsuTrending,KitsuAiring,AIOShounen,AIOMovies category
+    class Source1,Source2 source
