@@ -10,6 +10,8 @@ Debrid services are high-speed downloaders that fetch files from hosters and tor
 
 ### 1. Real-Debrid (RD)
 The most popular and cost-effective service with the largest cache of files.
+> [!NOTE]
+> Real Debrid has recentley faced legal issues and a large amount of files are now being blocked. Your milage may vary based on usage of this service.
 - **Pros:** Massive cache, affordable, high-speed servers.
 - **Cons:** Strict 1-IP rule (cannot use on two different internet connections at once).
 - **Setup:** [real-debrid.com/device](https://real-debrid.com/device)
