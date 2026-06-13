@@ -1,4 +1,4 @@
-[🏠 Home](/settings/overview.md) | [🛠️ Troubleshooting](troubleshooting.md) | [🔗 Official Links](official-links.md) | [📢 Report Issue](../../issues)
+[🏠 Home](/docs/overview.md) | [🛠️ Troubleshooting](troubleshooting.md) | [🔗 Official Links](official-links.md) | [📢 Report Issue](../../issues)
 
 ---
 
