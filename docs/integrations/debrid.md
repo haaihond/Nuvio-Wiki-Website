@@ -8,10 +8,10 @@ Debrid services are high-speed downloaders that fetch files from hosters and tor
 
 ## 🚀 Supported Services
 
-### 1. TorBox
+### 1. TorBox (TB)
 A fast-growing service that excels in Usenet support (pro teir only) alongside traditional torrent debrid.
 - **Pros:** No limit on IP usage, Native Usenet support (pro teir), fast caching, modern API.
-- **Cons:** Newer service (verify addon compatibility).
+- **Cons:** Newer service, can have stability issues.
 - **Setup:** [torbox.app/settings](https://torbox.app)
 
 ### 2. Real-Debrid (RD)
