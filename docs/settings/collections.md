@@ -27,7 +27,7 @@ graph LR
     class Movies2020,Movies2010 list
 ```
 
-**To Create a collect**
+**To Create a collection*
 
 There are a few key things you will need to create a collection.
 1. A metadata addon with youur catalogs that you want to be in a collection already created. This guide will be assuming you have done this.
