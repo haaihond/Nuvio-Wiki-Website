@@ -54,6 +54,8 @@ Great, now that we have that figured out, lets create our first collection. You 
     - Pin to top: This will move the collection to the front ahead of others
     - Enable focus glow: Will add a highlight effect when you hover over the collection
 6. Now at the folders tab you will have many options in here:
+    - Outline on the left side
+        - This is where you will add what you want to show on your homescreen for this collection. For instance, if you are createing a Collection called "franchises", and what to have seperate blocks on your home screen for the Matrix, Lord of the Rings, Star Wars, you will had a folder here for each one.
     - Folder ID: Keep this as is
     - Folder Title: This is what the name of the tab or row will be INSIDE of the collection. E.g. The Collection will be named Action, and the tabs will be named Action Movies 2020 and Action Movies 20109
     - TileShape: Choose what you prefer the shape to be between landsance, square, or portrai
@@ -61,3 +63,22 @@ Great, now that we have that figured out, lets create our first collection. You 
        - You will have an option to add catalog, add TMDB, and Add Trakt
             - Selecting add catalog you will be asked to choose the source of the addon. This will comee from you metadata addon e.g. aiometadata
                 - You will also be asked for the catalog. You will pick the catalog that you made using an addon like aiometadata
+            - Selecting add TMDB will provide you many options. They fall into these buckets:
+                - General Settings (Common Across All Sources)
+                    - These settings define the basic presentation and ordering of your collection within Nuvio.
+                    - Type: Determines the media format for the list. You can select either Movie or Series.
+                    - Name: The custom title for your collection. This is exactly how the list will be labeled on your Nuvio interface (e.g., "Top Sci-Fi" or "My Watchlist").
+                    - Sort By: Controls the display sequence of the media. Common options include:
+                        - Original: Keeps the exact order set by the database or list creator.
+                        - Recent: Sorts by release date.
+                        - Top Rated: Ranks items by their user review scores or the total number of ratings.
+                - ID-Based Sources
+                    - Most sources require a specific identifier to pull the correct metadata from the respective database.
+                    - Sources: TMDB List, Trakt List, TMDB Keyword, TMDB Company, TMDB Collection.
+                    - ID Field: This requires a specific numerical or alphanumeric code. You must locate the exact list, collection, company, or keyword on TMDB or Trakt and extract the ID from its URL. For example, in the TMDB URL themoviedb.org/collection/1248, the ID is 1248.
+                - Unique Sources
+                    - Certain sources use different input fields instead of a standard ID to gather content.
+                    - TMDB Discover:
+                        - Genres Field: Instead of an ID, you select one or more genres from a dropdown menu (such as Action, Horror, or Science Fiction). This dynamically generates a collection of media that fits those specific categories directly from TMDB's database.
+                    - Letterboxd List:
+                        - URL Field: This requires the full web address of the Letterboxd list you wish to import. You must paste the exact link from your browser rather than looking for a specific ID code.
