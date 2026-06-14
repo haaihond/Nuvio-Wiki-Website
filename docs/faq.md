@@ -16,4 +16,4 @@ Apple provides 10k spots to developers. These spots are often fully filled and r
 It is required that your metadata addons be first in the list of your addons. You can move them to the top spot within a Nuvio app under addons.
 
 ### Why can't I install plugins?
-If you installed Nuvio from an app store, the plugin feature is not included. You must use a sideload method to use Nvio's plugin feature.
+If you installed Nuvio from an app store, the plugin feature is not included. You must use a sideload method to use Nuvio's plugin feature.
