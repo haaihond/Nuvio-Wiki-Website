@@ -82,3 +82,34 @@ Great, now that we have that figured out, lets create our first collection. You 
                         - Genres Field: Instead of an ID, you select one or more genres from a dropdown menu (such as Action, Horror, or Science Fiction). This dynamically generates a collection of media that fits those specific categories directly from TMDB's database.
                     - Letterboxd List:
                         - URL Field: This requires the full web address of the Letterboxd list you wish to import. You must paste the exact link from your browser rather than looking for a specific ID code.
+            - Selection Trakt will provide you these options
+    The Core Settings (Always Required)
+Whenever you create a new Trakt-sourced collection, these base options must be configured first:
+
+Type: Determines the media format for the row. Select either Movie or Series.
+
+Name: The custom label for your collection (e.g., "My Trakt Watchlist" or "Trending Shows"). This is the text that appears on your Nuvio home screen.
+
+Sort By: Controls how the items are ordered within the collection:
+
+Default: Retains the native layout or ranking order provided by Trakt.
+
+Title (asc/desc): Arranges items alphabetically.
+
+Primary Release Date (asc/desc): Orders items chronologically by their release year.
+
+Trakt Source-Specific Settings
+After choosing your specific Trakt option from the source dropdown menu, configure its unique fields below:
+
+Trakt List
+Pulls a specific, static list created by you or another user on Trakt.
+
+URL: Requires the full web address of the target Trakt list.
+
+🚨 Critical URL Formatting Rule: The link must use the standard desktop domain format. Nuvio cannot read mobile or app-generated links.
+
+✅ Correct Format: https://trakt.tv/users/...
+
+❌ Incorrect Format: https://app.trakt.tv/...
+
+If the app.trakt.tv link is used, the collection will fail to sync and remain empty.
