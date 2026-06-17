@@ -11,16 +11,16 @@ files = [
     "docs/overview.md",
     "docs/quick-start.md",
     "docs/troubleshooting.md",
-    "docs/addons/README.md",
+    "docs/addons/index.md",
     "docs/installation/android-mobile.md",
     "docs/installation/android-tv.md",
     "docs/installation/ios.md",
-    "docs/installation/README.md",
+    "docs/installation/index.md",
     "docs/installation/webos.md",
     "docs/integrations/debrid.md",
     "docs/settings/collections.md",
     "docs/settings/profiles.md",
-    "docs/settings/README.md"
+    "docs/settings/index.md"
 ]
 
 corrections = {
@@ -56,7 +56,7 @@ def get_prefix(file_path):
         return "../" * (len(parts) - 1)
 
 def build_header(prefix):
-    return f"""[Home]({prefix}README.md) | [Quick Start]({prefix}docs/quick-start.md) | [Overview]({prefix}docs/overview.md) | [Features]({prefix}docs/features.md) | [Installation]({prefix}docs/installation/README.md) | [Settings]({prefix}docs/settings/README.md) | [Troubleshooting]({prefix}docs/troubleshooting.md) | [FAQ]({prefix}docs/faq.md)
+    return f"""[Home]({prefix}README.md) | [Quick Start]({prefix}docs/quick-start.md) | [Overview]({prefix}docs/overview.md) | [Features]({prefix}docs/features.md) | [Installation]({prefix}docs/installation/index.md) | [Settings]({prefix}docs/settings/index.md) | [Troubleshooting]({prefix}docs/troubleshooting.md) | [FAQ]({prefix}docs/faq.md)
 
 ---
 """

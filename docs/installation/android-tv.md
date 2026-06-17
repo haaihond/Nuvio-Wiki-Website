@@ -1,6 +1,3 @@
-[Home](../../README.md) | [Quick Start](../../docs/quick-start.md) | [Overview](../../docs/overview.md) | [Features](../../docs/features.md) | [Installation](../../docs/installation/README.md) | [Settings](../../docs/settings/README.md) | [Troubleshooting](../../docs/troubleshooting.md) | [FAQ](../../docs/faq.md)
-
----
 # Android TV Installation
 
 Just like on Android Mobile, there are two ways to install Nuvio on Android TV. One, is getting it from the play store and the second, is sideloading it.
@@ -21,7 +18,7 @@ Just like on Android Mobile, there are two ways to install Nuvio on Android TV. 
     - Finally, hit Delete twice in the Downloader app to remove the setup file and save your TV's storage space.
 
 2. **Option 2 Download the APK**
-    - Open a web browser on your smartphone, obtain the latest [TV APK from Nuvio's official Github](https://github.com/NuvioMedia/NuvioTV/releases/tag/0.7.6-beta). Select the Universal Release.
+    - Open a web browser on your smartphone, obtain the latest [TV APK from Nuvio's official GitHub](https://github.com/NuvioMedia/NuvioTV/releases/latest). Select the Universal Release.
     - Open the Google Play Store on both your phone and your Android TV. Search for and install the app Send files to TV on both devices.
         - Enable unknown sources using the above steps in Option 1.
         - Ensure your phone and TV are on the same Wi-Fi network. Open Send files to TV on your TV and select Receive.

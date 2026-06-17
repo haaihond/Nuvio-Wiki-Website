@@ -1,6 +1,3 @@
-[Home](../README.md) | [Quick Start](../docs/quick-start.md) | [Overview](../docs/overview.md) | [Features](../docs/features.md) | [Installation](../docs/installation/README.md) | [Settings](../docs/settings/README.md) | [Troubleshooting](../docs/troubleshooting.md) | [FAQ](../docs/faq.md)
-
----
 # 🛠️ Troubleshooting Guide
 
 Find solutions to common issues with Nuvio below.

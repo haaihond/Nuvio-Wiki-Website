@@ -1,12 +1,9 @@
-[Home](../../README.md) | [Quick Start](../../docs/quick-start.md) | [Overview](../../docs/overview.md) | [Features](../../docs/features.md) | [Installation](../../docs/installation/README.md) | [Settings](../../docs/settings/README.md) | [Troubleshooting](../../docs/troubleshooting.md) | [FAQ](../../docs/faq.md)
-
----
 # iOS Installation
 
-Nuvio on iOS typically requires **Sideloading** (AltStore/Sideloadly). Apple allows for 10k testflight users which is normally full.
+Nuvio on iOS typically requires **Sideloading** (AltStore/Sideloadly). Apple allows for 10k TestFlight users which is normally full.
 
 >[!NOTE]
->Please do not message the Nuvio developers asking when testflight spots will be open. This not in their control.
+>Please do not message the Nuvio developers asking when TestFlight spots will be open. This is not in their control.
 
 **Sideloadly Method**
 

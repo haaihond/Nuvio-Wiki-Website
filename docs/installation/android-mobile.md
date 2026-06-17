@@ -1,6 +1,3 @@
-[Home](../../README.md) | [Quick Start](../../docs/quick-start.md) | [Overview](../../docs/overview.md) | [Features](../../docs/features.md) | [Installation](../../docs/installation/README.md) | [Settings](../../docs/settings/README.md) | [Troubleshooting](../../docs/troubleshooting.md) | [FAQ](../../docs/faq.md)
-
----
 # Android Mobile Installation
 
 There are two ways to install Nuvio on Android Mobile. One, is getting it from the play store and the second, is sideloading it.
@@ -9,7 +6,7 @@ There are two ways to install Nuvio on Android Mobile. One, is getting it from t
 > The google play store version lacks some features of the apk sideload version to comply with the Play Stores policies. It is recommended that you sideload it.
 
 **APK Version**
-1.  **Download the APK:** Obtain the latest [mobile APK from Nuvio's official Github](https://github.com/NuvioMedia/NuvioMobile/releases/tag/0.2.6-beta)
+1.  **Download the APK:** Obtain the latest [mobile APK from Nuvio's official GitHub](https://github.com/NuvioMedia/NuvioMobile/releases/latest).
 2.  **Enable Unknown Sources:**
     - Go to **Settings** > **Apps** > **Install Unknown Apps**.
     - Choose your browser or file manager and toggle **Allow from this source**.
