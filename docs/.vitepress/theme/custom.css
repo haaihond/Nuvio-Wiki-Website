@@ -410,6 +410,40 @@ body {
   white-space: nowrap;
 }
 
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0.18em;
+  padding: 2px 8px;
+  border: 1px solid color-mix(in srgb, var(--platform-color, var(--vp-c-brand-1)) 38%, transparent);
+  border-radius: 999px;
+  color: var(--platform-color, var(--vp-c-brand-1));
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  vertical-align: 0.1em;
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--platform-color, var(--vp-c-brand-1)) 11%, transparent);
+}
+
+.platform-badge--android-tv {
+  --platform-color: #3b82f6;
+}
+
+.platform-badge--android-mobile,
+.platform-badge--mobile {
+  --platform-color: #16a36a;
+}
+
+.platform-badge--ios {
+  --platform-color: #8b5cf6;
+}
+
+.platform-badge--webos {
+  --platform-color: #e14377;
+}
+
 .VPDocFooter {
   margin-top: 56px;
 }

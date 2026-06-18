@@ -1,4 +1,4 @@
-# iOS Installation
+# iOS Installation <PlatformBadge platform="iOS" />
 
 Nuvio on iOS typically requires **Sideloading** (AltStore/Sideloadly). Apple allows for 10k TestFlight users which is normally full.
 

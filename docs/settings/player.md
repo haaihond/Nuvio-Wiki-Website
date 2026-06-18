@@ -7,11 +7,11 @@ Nuvio offers a variety of player settings to customize your experience. This sec
 - [Next Episode](#next-episode)
 - [Subtitle and Audio](#subtitle-and-audio)
 - [Player and Decoder Options](#player-and-decoder-options)
-- [Buffer and Network](#buffer-and-network-tv-only)
+- [Buffer and Network](#buffer-and-network)
 - [MPV](#mpv)
 
 > [!IMPORTANT]
-> Anything not labeled [TV Only] or [Mobile Only] is a feature of both versions.
+> Anything not labeled <PlatformBadge platform="Android TV" /> or <PlatformBadge platform="Mobile" /> is a feature of both versions.
 
 ---
 
@@ -38,7 +38,7 @@ Nuvio uses three separate databases for intro and outro skipping, prioritized in
 8. Copy the generated Client ID (a long string of numbers and letters).
 9. Go back into Nuvio, paste the Client ID, and select **Save**.
 
-**To submit Intros and Outros to IntroDB [Mobile Only]:**
+**To submit Intros and Outros to IntroDB** <PlatformBadge platform="Mobile" />:
 
 Nuvio allows you to submit timestamps to IntroDB's community-sourced database. You will need an API key:
 1. Go to [Intro DB](https://introdb.app).
@@ -48,7 +48,7 @@ Nuvio allows you to submit timestamps to IntroDB's community-sourced database. Y
 5. Copy the key.
 6. Go back into Nuvio, paste the API key, and select **Save**.
 
-**Automatic Skipping & Content Warnings [TV Only]:**
+**Automatic Skipping & Content Warnings** <PlatformBadge platform="Android TV" />:
 - **Content Warnings:** Show parental guidance overlay when playback starts.
 - **Automatic Skipping:** Choose which segments (intros/outros) skip automatically without prompting.
 
@@ -105,7 +105,7 @@ The Next Episode category includes several settings to optimize continuous viewi
 - **Next Episode Threshold Mode:** Used as a fallback if no outro skip is present. This can be set in 0.5% increments from 100% down to 97%.
   - *At 100%:* Nuvio will not begin the source selection process until the media is completely finished.
   - *At 97%:* Nuvio will begin the source selection process when the media is 97% complete (e.g., for a 30-minute show, selection begins at 29 minutes and 6 seconds).
-- **Are You Still Watching? [TV Only]:** Prompts the user after a set number of consecutive auto-played episodes to prevent infinite playback if you fall asleep.
+- **Are You Still Watching?** <PlatformBadge platform="Android TV" />: Prompts the user after a set number of consecutive auto-played episodes to prevent infinite playback if you fall asleep.
 
 ---
 
@@ -126,7 +126,7 @@ These configurations control which text translations are displayed on screen and
 - **Secondary Preferred Language:** Your fallback subtitle language.
 - **Use Forced Subtitles (Toggle On/Off):** Prioritizes "forced" subtitles that match your preferred language. Forced subtitles translate foreign languages, alien dialogue, or on-screen text while the rest of the media remains in your primary spoken language.
 - **Show Only Preferred Languages (Toggle On/Off):** Filters the subtitle menu to hide all tracks except those that exactly match your primary and secondary language preferences.
-- **Subtitle Styling [TV Optimized]:** Offers granular control over subtitle aesthetics including **Size (Scaling)**, **Vertical Offset** (to accommodate letterboxing), **Text Color**, **Background Color**, and **Outline/Outline Color**.
+- **Subtitle Styling** <PlatformBadge platform="Android TV" label="TV optimized" />: Offers granular control over subtitle aesthetics including **Size (Scaling)**, **Vertical Offset** (to accommodate letterboxing), **Text Color**, **Background Color**, and **Outline/Outline Color**.
 - **Use libass for ASS/SSA subtitles:** An experimental toggle to use the advanced libass engine for rendering complex styles, positioning, and animations of ASS/SSA subtitles.
   - Turning this on tells the player to use a specialized graphics engine (libass) to draw complex subtitles perfectly. If left off, the player might strip out all the colors and placement formatting, or worse, crash trying to read the file.
 
@@ -144,16 +144,16 @@ Controls how aggressively Nuvio searches for external subtitles when a video beg
 Controls the visual experience and interactions within the media player.
 
 - **Loading Overlay:** Displays a continuous loading screen or graphic to hide buffering, black screens, or transitions. The overlay remains visible until the first frame of the video is ready.
-- **Pause Overlay [TV Only]:** Shows a details overlay after 5 seconds while playback is paused.
-- **OSD Clock [TV Only]:** Shows the current time and estimated end time while the transport controls are visible on screen.
+- **Pause Overlay** <PlatformBadge platform="Android TV" />: Shows a details overlay after 5 seconds while playback is paused.
+- **OSD Clock** <PlatformBadge platform="Android TV" />: Shows the current time and estimated end time while the transport controls are visible on screen.
 - **Player:** Dictates which video engine handles your streams.
   - *Internal:* Keeps you inside Nuvio using its native player.
   - *Internal Engine:* Choose between ExoPlayer or libmpv as the primary renderer.
-  - *Auto-switch engine on startup error [TV Only]:* Automatically falls back from ExoPlayer to libmpv for detected anime or if a stream fails to initialize.
+  - *Auto-switch engine on startup error* <PlatformBadge platform="Android TV" />: Automatically falls back from ExoPlayer to libmpv for detected anime or if a stream fails to initialize.
   - *External:* Passes the video link to a third-party application installed on your device (e.g., VLC, MX Player).
-- **Hold To Speed [Mobile Only]:** A touch-screen shortcut for skimming. Pressing and holding anywhere on the video player temporarily increases playback speed. Normal playback resumes when released.
-- **Hold Speed [Mobile Only]:** Configures the exact playback speed multiplier when using the "Hold To Speed" feature.
-- **Gesture Controls [Mobile Only]:** Activates vertical touchscreen sliding regions on the left and right sides of the screen panel to quickly adjust local volume and brightness.
+- **Hold To Speed** <PlatformBadge platform="Mobile" />: A touch-screen shortcut for skimming. Pressing and holding anywhere on the video player temporarily increases playback speed. Normal playback resumes when released.
+- **Hold Speed** <PlatformBadge platform="Mobile" />: Configures the exact playback speed multiplier when using the "Hold To Speed" feature.
+- **Gesture Controls** <PlatformBadge platform="Mobile" />: Activates vertical touchscreen sliding regions on the left and right sides of the screen panel to quickly adjust local volume and brightness.
 
 ### Advanced Processing & Decoding
 Technical settings that determine how your device's hardware and software process raw video and audio data.
@@ -163,9 +163,9 @@ Technical settings that determine how your device's hardware and software proces
   - *Prefer device decoders:* Use hardware decoders when available, fall back to FFmpeg. Recommended for most devices.
   - *Prefer app decoders (FFmpeg):* Use FFmpeg decoders when available. Better format support but higher CPU usage.
 - **DV7 - HEVC Fallback:** Dolby Vision Profile 7 (DV7) is a premium HDR format. Playing a DV7 file on unsupported hardware often results in distorted colors (e.g., a completely purple or green screen). Enabling this strips the unreadable Dolby Vision data and maps the video down to standard HEVC (H.265) for correct color playback.
-- **Preserve DV mapping (DV7 to DV8.1) [TV Only]:** Keeps original creator-intended tone-mapping at the cost of slightly more processing power per frame.
-- **Convert DV5 to DV8.1 [TV Only]:** Signals Profile 5 streams as Profile 8.1 for HDR10-compatible output, helping correctly map colors on devices that lack a native DV5 decoder.
-- **Auto Frame Rate & Resolution [TV Only]:** Dynamically adjusts your television hardware's refresh rate to natively match the source file frame pacing, eliminating panning judder. Options include:
+- **Preserve DV mapping (DV7 to DV8.1)** <PlatformBadge platform="Android TV" />: Keeps original creator-intended tone-mapping at the cost of slightly more processing power per frame.
+- **Convert DV5 to DV8.1** <PlatformBadge platform="Android TV" />: Signals Profile 5 streams as Profile 8.1 for HDR10-compatible output, helping correctly map colors on devices that lack a native DV5 decoder.
+- **Auto Frame Rate & Resolution** <PlatformBadge platform="Android TV" />: Dynamically adjusts your television hardware's refresh rate to natively match the source file frame pacing, eliminating panning judder. Options include:
   - *Off:* Don't change display refresh rate.
   - *On start:* Switch when playback starts.
   - *On start/stop:* Switch on start and restore on stop.
@@ -178,7 +178,7 @@ Technical settings that determine how your device's hardware and software proces
 
 ---
 
-## Buffer and Network [TV Only]
+## Buffer and Network <PlatformBadge platform="Android TV" />
 
 These settings manage how much video data is kept in memory and how peer-to-peer streams are handled.
 
