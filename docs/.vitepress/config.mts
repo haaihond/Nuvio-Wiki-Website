@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { mermaidDiagrams } from './markdown/mermaidDiagrams.mts'
 import { platformBadges } from './markdown/platformBadges.mts'
 
 const base = process.env.VITEPRESS_BASE || '/'
@@ -162,6 +163,7 @@ export default defineConfig({
   markdown: {
     lineNumbers: true,
     config(md) {
+      mermaidDiagrams(md)
       platformBadges(md)
     },
     theme: {

@@ -448,6 +448,38 @@ body {
   --platform-color: #00a6a6;
 }
 
+.mermaid-diagram {
+  position: relative;
+  overflow-x: auto;
+  margin: 24px 0;
+  padding: 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: var(--vp-c-bg-soft);
+}
+
+.mermaid-diagram__output {
+  display: flex;
+  justify-content: center;
+  min-width: max-content;
+}
+
+.mermaid-diagram__output svg {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid-diagram__status {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  text-align: center;
+}
+
+.mermaid-diagram__status--error {
+  color: var(--vp-c-danger-1);
+}
+
 .VPDocFooter {
   margin-top: 56px;
 }
