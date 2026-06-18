@@ -1,16 +1,139 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, type DefaultTheme } from 'vitepress'
+import {
+  englishLocale,
+  localeLink,
+  localeRoot,
+  wikiLocales,
+  type WikiLocale
+} from './i18n/locales.mts'
 import { mermaidDiagrams } from './markdown/mermaidDiagrams.mts'
 import { platformBadges } from './markdown/platformBadges.mts'
 
 const base = process.env.VITEPRESS_BASE || '/'
 
+function buildNav(locale: WikiLocale): DefaultTheme.NavItem[] {
+  const labels = locale.labels
+  const nav: DefaultTheme.NavItem[] = [
+    { text: labels.getStarted, link: localeLink(locale, '/quick-start') },
+    {
+      text: labels.configure,
+      items: [
+        { text: labels.addons, link: localeLink(locale, '/addons/') },
+        { text: labels.settings, link: localeLink(locale, '/settings/') },
+        { text: labels.player, link: localeLink(locale, '/settings/player') },
+        { text: labels.integrations, link: localeLink(locale, '/integrations/') },
+        { text: labels.debrid, link: localeLink(locale, '/integrations/debrid') },
+        { text: labels.metadataTracking, link: localeLink(locale, '/integrations/imdb-mdblist-trakt') }
+      ]
+    },
+    {
+      text: labels.help,
+      items: [
+        { text: labels.troubleshooting, link: localeLink(locale, '/troubleshooting') },
+        { text: labels.faq, link: localeLink(locale, '/faq') },
+        { text: labels.features, link: localeLink(locale, '/features') }
+      ]
+    },
+    { text: labels.linksAndResources, link: localeLink(locale, '/official-links') }
+  ]
+
+  if (wikiLocales.length === 1) {
+    nav.push({
+      text: englishLocale.label,
+      items: [
+        { text: 'English (default)', link: '/' },
+        {
+          text: 'Help translate',
+          link: 'https://github.com/haaihond/Nuvio-Wiki-Website/blob/main/TRANSLATING.md'
+        }
+      ]
+    })
+  }
+
+  return nav
+}
+
+function buildSidebar(locale: WikiLocale): DefaultTheme.SidebarItem[] {
+  const labels = locale.labels
+
+  return [
+    {
+      text: labels.gettingStarted,
+      items: [
+        { text: labels.welcome, link: localeRoot(locale) },
+        { text: labels.quickStart, link: localeLink(locale, '/quick-start') },
+        { text: labels.overview, link: localeLink(locale, '/overview') },
+        { text: labels.features, link: localeLink(locale, '/features') },
+        { text: labels.glossary, link: localeLink(locale, '/glossary') }
+      ]
+    },
+    {
+      text: labels.installation,
+      collapsed: false,
+      items: [
+        { text: labels.choosePlatform, link: localeLink(locale, '/installation/') },
+        { text: labels.androidTV, link: localeLink(locale, '/installation/android-tv') },
+        { text: labels.androidMobile, link: localeLink(locale, '/installation/android-mobile') },
+        { text: labels.ios, link: localeLink(locale, '/installation/ios') },
+        { text: labels.webos, link: localeLink(locale, '/installation/webos') }
+      ]
+    },
+    {
+      text: labels.configure,
+      collapsed: false,
+      items: [
+        { text: labels.addons, link: localeLink(locale, '/addons/') },
+        { text: labels.settings, link: localeLink(locale, '/settings/') },
+        { text: labels.player, link: localeLink(locale, '/settings/player') },
+        { text: labels.profiles, link: localeLink(locale, '/settings/profiles') },
+        { text: labels.collections, link: localeLink(locale, '/settings/collections') },
+        { text: labels.integrations, link: localeLink(locale, '/integrations/') },
+        { text: labels.debrid, link: localeLink(locale, '/integrations/debrid') },
+        { text: labels.metadataTracking, link: localeLink(locale, '/integrations/imdb-mdblist-trakt') }
+      ]
+    },
+    {
+      text: labels.help,
+      collapsed: false,
+      items: [
+        { text: labels.troubleshooting, link: localeLink(locale, '/troubleshooting') },
+        { text: labels.faq, link: localeLink(locale, '/faq') },
+        { text: labels.officialLinks, link: localeLink(locale, '/official-links') }
+      ]
+    }
+  ]
+}
+
+const locales = Object.fromEntries(
+  wikiLocales.map((locale) => [
+    locale.key,
+    {
+      label: locale.label,
+      lang: locale.lang,
+      dir: locale.dir,
+      link: localeRoot(locale),
+      ...(locale.key === 'root'
+        ? {}
+        : {
+            themeConfig: {
+              nav: buildNav(locale),
+              sidebar: buildSidebar(locale),
+              ...locale.themeConfig
+            }
+          })
+    }
+  ])
+)
+
 export default defineConfig({
+  lang: 'en-US',
   title: 'Nuvio Wiki',
   titleTemplate: ':title | Nuvio Wiki',
   description: 'Community-maintained guides for installing, configuring, and using Nuvio.',
   base,
   cleanUrls: true,
   lastUpdated: true,
+  locales,
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
     ['script', { type: 'module', src: `${base}sidebar-scroll.js?v=20260617e` }],
@@ -21,6 +144,8 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    i18nRouting: false,
+    langMenuLabel: 'Change language',
     logo: {
       light: '/logo.svg',
       dark: '/logo.svg',
@@ -28,29 +153,7 @@ export default defineConfig({
     },
     siteTitle: 'Nuvio Wiki',
 
-    nav: [
-      { text: 'Get started', link: '/quick-start' },
-      {
-        text: 'Configure',
-        items: [
-          { text: 'Addons', link: '/addons/' },
-          { text: 'Settings', link: '/settings/' },
-          { text: 'Player', link: '/settings/player' },
-          { text: 'Integrations', link: '/integrations/' },
-          { text: 'Debrid', link: '/integrations/debrid' },
-          { text: 'IMDb, MDBList, Trakt', link: '/integrations/imdb-mdblist-trakt' }
-        ]
-      },
-      {
-        text: 'Help',
-        items: [
-          { text: 'Troubleshooting', link: '/troubleshooting' },
-          { text: 'FAQ', link: '/faq' },
-          { text: 'Features', link: '/features' }
-        ]
-      },
-      { text: 'Links & Resources', link: '/official-links' }
-    ],
+    nav: buildNav(englishLocale),
 
     search: {
       provider: 'local',
@@ -80,52 +183,7 @@ export default defineConfig({
       }
     },
 
-    sidebar: [
-      {
-        text: 'Getting Started',
-        items: [
-          { text: 'Welcome', link: '/' },
-          { text: 'Quick Start', link: '/quick-start' },
-          { text: 'Overview', link: '/overview' },
-          { text: 'Features', link: '/features' },
-          { text: 'Glossary', link: '/glossary' }
-        ]
-      },
-      {
-        text: 'Installation',
-        collapsed: false,
-        items: [
-          { text: 'Choose a Platform', link: '/installation/' },
-          { text: 'Android TV', link: '/installation/android-tv' },
-          { text: 'Android Mobile', link: '/installation/android-mobile' },
-          { text: 'iOS', link: '/installation/ios' },
-          { text: 'WebOS', link: '/installation/webos' }
-        ]
-      },
-      {
-        text: 'Configure',
-        collapsed: false,
-        items: [
-          { text: 'Addons', link: '/addons/' },
-          { text: 'Settings', link: '/settings/' },
-          { text: 'Player', link: '/settings/player' },
-          { text: 'Profiles', link: '/settings/profiles' },
-          { text: 'Collections', link: '/settings/collections' },
-          { text: 'Integrations', link: '/integrations/' },
-          { text: 'Debrid', link: '/integrations/debrid' },
-          { text: 'IMDb, MDBList, Trakt', link: '/integrations/imdb-mdblist-trakt' }
-        ]
-      },
-      {
-        text: 'Help',
-        collapsed: false,
-        items: [
-          { text: 'Troubleshooting', link: '/troubleshooting' },
-          { text: 'FAQ', link: '/faq' },
-          { text: 'Official Links', link: '/official-links' }
-        ]
-      }
-    ],
+    sidebar: buildSidebar(englishLocale),
 
     socialLinks: [
       { icon: 'discord', link: 'https://discord.gg/nuvio' },
