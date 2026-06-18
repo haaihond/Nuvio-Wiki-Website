@@ -1,4 +1,4 @@
-# Android TV Installation <PlatformBadge platform="Android TV" />
+# Android TV Installation [Android TV Only]
 
 Just like on Android Mobile, there are two ways to install Nuvio on Android TV. One, is getting it from the play store and the second, is sideloading it.
 

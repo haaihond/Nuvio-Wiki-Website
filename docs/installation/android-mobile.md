@@ -1,4 +1,4 @@
-# Android Mobile Installation <PlatformBadge platform="Android Mobile" />
+# Android Mobile Installation [Android Mobile Only]
 
 There are two ways to install Nuvio on Android Mobile. One, is getting it from the play store and the second, is sideloading it.
 

@@ -444,6 +444,10 @@ body {
   --platform-color: #e14377;
 }
 
+.platform-badge--tizen {
+  --platform-color: #00a6a6;
+}
+
 .VPDocFooter {
   margin-top: 56px;
 }

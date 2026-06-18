@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { platformBadges } from './markdown/platformBadges.mts'
 
 const base = process.env.VITEPRESS_BASE || '/'
 
@@ -160,6 +161,9 @@ export default defineConfig({
 
   markdown: {
     lineNumbers: true,
+    config(md) {
+      platformBadges(md)
+    },
     theme: {
       light: 'github-light',
       dark: 'github-dark'

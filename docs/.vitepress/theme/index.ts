@@ -1,7 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import BackToTop from './BackToTop.vue'
-import PlatformBadge from './PlatformBadge.vue'
 import './custom.css'
 
 export default {
@@ -11,6 +10,5 @@ export default {
   }),
   enhanceApp({ app }) {
     app.component('BackToTop', BackToTop)
-    app.component('PlatformBadge', PlatformBadge)
   }
 }

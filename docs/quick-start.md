@@ -15,8 +15,8 @@ Want to get Nuvio up and running in 10 minutes? Follow this sequence:
 > For an easier setup, use the [Nuvio Quickstart Tool](https://nuvio-quickstart.duckdns.org/) to set up Nuvio addons for you. This will install *AIOStreams* using Tam-Taro's template and *Cinemeta*.
 
 Nuvio is empty by default. You need an addon to see content. See [Addons](/addons/).
-- <PlatformBadge platform="Android Mobile" /> Open Nuvio > **Settings** > **Content and Discovery** > **Addons**.
-- <PlatformBadge platform="Android TV" /> The addons menu is accessible from the sidebar.
+- [Android Mobile Only] Open Nuvio > **Settings** > **Content and Discovery** > **Addons**.
+- [Android TV Only] The addons menu is accessible from the sidebar.
 - Tap **Install from URL**.
 - Enter a manifest link.
 
@@ -38,7 +38,7 @@ To enable metadata enrichment and external tracking, configure your external acc
 
 ### Metadata Enrichment
 Go to **Settings** > **Integrations** to add your developer API keys:
-- **TMDB Enrichment** <PlatformBadge platform="Mobile" label="Required for mobile" />: Toggle this feature **On** and input your personal **TMDB API Key** to fetch rich asset metadata.
+- **TMDB Enrichment** [Required for Mobile]: Toggle this feature **On** and input your personal **TMDB API Key** to fetch rich asset metadata.
 - **MDBList:** Toggle this feature **On** and input your **MDBList API Key** to bring in rating data.
 
 ---
