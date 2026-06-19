@@ -428,10 +428,10 @@ async function handleInstall() {
   installing.value = true
   installError.value = null
   installResult.value = null
+  const instanceUrl = form.instanceUrl.replace(/\/$/, '')
+  const useSameOriginProxy = instanceUrl === DEFAULT_INSTANCE_URL
   try {
-    const instanceUrl = form.instanceUrl.replace(/\/$/, '')
-    const useLocalProxy = import.meta.env.DEV && instanceUrl === DEFAULT_INSTANCE_URL
-    const endpoint = useLocalProxy ? '/api/aiostreams/user' : `${instanceUrl}/api/v1/user`
+    const endpoint = useSameOriginProxy ? '/api/aiostreams/user' : `${instanceUrl}/api/v1/user`
     const password = installPassword.value || createInstallPassword()
     const res = await fetch(endpoint, {
       method: 'POST',
@@ -460,7 +460,9 @@ async function handleInstall() {
     recordRecent(form.instanceUrl)
   } catch (e) {
     const networkHint = e instanceof TypeError
-      ? ' This deployment needs a same-origin AIOStreams proxy; direct browser requests are blocked by the instance CORS policy.'
+      ? useSameOriginProxy
+        ? ' The same-origin AIOStreams proxy is unavailable.'
+        : ' Direct browser requests may be blocked by this instance CORS policy.'
       : ''
     installError.value = `${e.message || 'Manifest creation failed.'}${networkHint} You can still download the config JSON and import it manually.`
   } finally {
