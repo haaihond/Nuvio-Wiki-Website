@@ -576,6 +576,24 @@ body {
   }
 }
 
+@media (min-width: 1441px) {
+  .VPNavBarSearch {
+    left: calc(50vw - 24px);
+    transform: translateX(-100%);
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1440px) {
+  .VPNavBarSearch {
+    position: static;
+    width: auto;
+    min-width: 48px;
+    max-width: 440px;
+    margin-right: 16px;
+    transform: none;
+  }
+}
+
 @media (max-width: 1300px) and (min-width: 960px) {
   .VPNavBarSearch {
     width: min(28vw, 360px);
