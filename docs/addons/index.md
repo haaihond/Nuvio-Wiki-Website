@@ -12,12 +12,15 @@ There are 3 main types of addons for Nuvio:
   - **Metadata Providers:** Enhance the UI with posters, ratings, and synopses.
   - **Utility Addons:** Provide extra features like subtitles or playback sync.
 
+[Back to top](#addons-guide)
 
 ## How to add an addon
 
 To add an addon, you typically need a manifest URL obtained from the addon
 - These will be generated when configuring the addon.
 - The manifest generated will be pasted into the addons tab of Nuvio.
+
+[Back to top](#addons-guide)
 
 ---
 
@@ -54,3 +57,5 @@ Once a working P2P addon is installed, selecting a title causes the addon to fin
 > [!NOTE]
 > **P2P Availability Advisory:** 
 > Not all instances or addons provide access to P2P. Many public hosted instances explicitly block P2P scraping (including AIOStreams' own official public ElfHosted instance). Ensure the AIOStreams or Comet instance you are utilizing allows P2P connections so Nuvio receives the necessary hashes.
+
+[Back to top](#addons-guide)
