@@ -1,5 +1,10 @@
 # FAQ
 
+>[!NOTE]
+>Reminder: This project is not official. Do not contact Nuvio developers regarding issues with this wiki.
+
+---
+
 ### Is Nuvio free?
 Yes, Nuvio is free and open source software (FOSS). Nuvio runs on donations. Please consider [donating](https://tapframe.space/contribute).
 
