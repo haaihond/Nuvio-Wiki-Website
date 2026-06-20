@@ -1,14 +1,6 @@
 # Nuvio Player Settings
 
-Nuvio offers a variety of player settings to customize your experience. This section covers:
-
-- [Intro and Outro Skip](#intro-and-outro-skip)
-- [Stream Selection and Stream Auto Play](#stream-selection-and-stream-auto-play)
-- [Next Episode](#next-episode)
-- [Subtitle and Audio](#subtitle-and-audio)
-- [Player and Decoder Options](#player-and-decoder-options)
-- [Buffer and Network](#buffer-and-network)
-- [MPV](#mpv)
+Nuvio offers a variety of player settings to customize your experience.
 
 > [!IMPORTANT]
 > Anything not labeled [Android TV Only] or [Mobile Only] is a feature of both versions.
