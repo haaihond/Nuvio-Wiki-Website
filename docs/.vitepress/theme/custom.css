@@ -576,13 +576,6 @@ body {
   }
 }
 
-@media (min-width: 1441px) {
-  .VPNavBarSearch {
-    left: calc(50vw - 24px);
-    transform: translateX(-100%);
-  }
-}
-
 @media (min-width: 960px) and (max-width: 1440px) {
   .VPNavBarSearch {
     position: static;

@@ -33,8 +33,7 @@ function buildNav(locale: WikiLocale): DefaultTheme.NavItem[] {
         { text: labels.faq, link: localeLink(locale, '/faq') },
         { text: labels.features, link: localeLink(locale, '/features') }
       ]
-    },
-    { text: labels.linksAndResources, link: localeLink(locale, '/official-links') }
+    }
   ]
 
   if (wikiLocales.length === 1) {
@@ -210,11 +209,6 @@ export default defineConfig({
       formatOptions: {
         dateStyle: 'medium'
       }
-    },
-
-    footer: {
-      message: 'Community-maintained and not affiliated with the official Nuvio development team.',
-      copyright: 'Nuvio Wiki · Created by haaihond and sappy'
     }
   },
 
