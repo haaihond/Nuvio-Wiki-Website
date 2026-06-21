@@ -634,7 +634,7 @@ onMounted(async () => {
           </div>
         </div>
         <div class="copy-field">
-          <label>Configure URL → edit later (keep safe)</label>
+          <label>Configure URL → edit later</label>
           <div class="copy-row">
             <input :value="installResult.configureUrl" readonly class="input mono" />
             <button class="btn btn-sm" @click="copyToClipboard(installResult.configureUrl, 'Configure URL copied')">Copy</button>
