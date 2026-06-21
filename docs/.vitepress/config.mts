@@ -8,30 +8,34 @@ import {
 } from './i18n/locales.mts'
 import { mermaidDiagrams } from './markdown/mermaidDiagrams.mts'
 import { platformBadges } from './markdown/platformBadges.mts'
+import { validateSiteRoutes, writeLegacyRedirects } from './routeSafety.mts'
+import { siteRoutes } from './routes.mts'
 
 const base = process.env.VITEPRESS_BASE || '/'
+
+validateSiteRoutes()
 
 function buildNav(locale: WikiLocale): DefaultTheme.NavItem[] {
   const labels = locale.labels
   const nav: DefaultTheme.NavItem[] = [
-    { text: labels.getStarted, link: localeLink(locale, '/quick-start') },
+    { text: labels.getStarted, link: localeLink(locale, siteRoutes.quickStart) },
     {
       text: labels.configure,
       items: [
-        { text: labels.addons, link: localeLink(locale, '/addons/') },
-        { text: labels.settings, link: localeLink(locale, '/settings/') },
-        { text: labels.player, link: localeLink(locale, '/settings/player') },
-        { text: labels.integrations, link: localeLink(locale, '/integrations/') },
-        { text: labels.debrid, link: localeLink(locale, '/integrations/debrid') },
-        { text: labels.metadataTracking, link: localeLink(locale, '/integrations/imdb-mdblist-trakt') }
+        { text: labels.addons, link: localeLink(locale, siteRoutes.addons) },
+        { text: labels.settings, link: localeLink(locale, siteRoutes.settings) },
+        { text: labels.player, link: localeLink(locale, siteRoutes.player) },
+        { text: labels.integrations, link: localeLink(locale, siteRoutes.integrations) },
+        { text: labels.debrid, link: localeLink(locale, siteRoutes.debrid) },
+        { text: labels.metadataTracking, link: localeLink(locale, siteRoutes.metadataTracking) }
       ]
     },
     {
       text: labels.help,
       items: [
-        { text: labels.troubleshooting, link: localeLink(locale, '/troubleshooting') },
-        { text: labels.faq, link: localeLink(locale, '/faq') },
-        { text: labels.features, link: localeLink(locale, '/features') }
+        { text: labels.troubleshooting, link: localeLink(locale, siteRoutes.troubleshooting) },
+        { text: labels.faq, link: localeLink(locale, siteRoutes.faq) },
+        { text: labels.features, link: localeLink(locale, siteRoutes.features) }
       ]
     }
   ]
@@ -60,44 +64,44 @@ function buildSidebar(locale: WikiLocale): DefaultTheme.SidebarItem[] {
       text: labels.gettingStarted,
       items: [
         { text: labels.welcome, link: localeRoot(locale) },
-        { text: labels.quickStart, link: localeLink(locale, '/quick-start') },
-        { text: labels.overview, link: localeLink(locale, '/overview') },
-        { text: labels.features, link: localeLink(locale, '/features') },
-        { text: labels.glossary, link: localeLink(locale, '/glossary') }
+        { text: labels.quickStart, link: localeLink(locale, siteRoutes.quickStart) },
+        { text: labels.overview, link: localeLink(locale, siteRoutes.overview) },
+        { text: labels.features, link: localeLink(locale, siteRoutes.features) },
+        { text: labels.glossary, link: localeLink(locale, siteRoutes.glossary) }
       ]
     },
     {
       text: labels.installation,
       collapsed: false,
       items: [
-        { text: labels.choosePlatform, link: localeLink(locale, '/installation/') },
-        { text: labels.androidTV, link: localeLink(locale, '/installation/android-tv') },
-        { text: labels.androidMobile, link: localeLink(locale, '/installation/android-mobile') },
-        { text: labels.ios, link: localeLink(locale, '/installation/ios') },
-        { text: labels.webos, link: localeLink(locale, '/installation/webos') }
+        { text: labels.choosePlatform, link: localeLink(locale, siteRoutes.installation) },
+        { text: labels.androidTV, link: localeLink(locale, siteRoutes.androidTV) },
+        { text: labels.androidMobile, link: localeLink(locale, siteRoutes.androidMobile) },
+        { text: labels.ios, link: localeLink(locale, siteRoutes.ios) },
+        { text: labels.webos, link: localeLink(locale, siteRoutes.webos) }
       ]
     },
     {
       text: labels.configure,
       collapsed: false,
       items: [
-        { text: labels.addons, link: localeLink(locale, '/addons/') },
-        { text: labels.settings, link: localeLink(locale, '/settings/') },
-        { text: labels.player, link: localeLink(locale, '/settings/player') },
-        { text: labels.profiles, link: localeLink(locale, '/settings/profiles') },
-        { text: labels.collections, link: localeLink(locale, '/settings/collections') },
-        { text: labels.integrations, link: localeLink(locale, '/integrations/') },
-        { text: labels.debrid, link: localeLink(locale, '/integrations/debrid') },
-        { text: labels.metadataTracking, link: localeLink(locale, '/integrations/imdb-mdblist-trakt') }
+        { text: labels.addons, link: localeLink(locale, siteRoutes.addons) },
+        { text: labels.settings, link: localeLink(locale, siteRoutes.settings) },
+        { text: labels.player, link: localeLink(locale, siteRoutes.player) },
+        { text: labels.profiles, link: localeLink(locale, siteRoutes.profiles) },
+        { text: labels.collections, link: localeLink(locale, siteRoutes.collections) },
+        { text: labels.integrations, link: localeLink(locale, siteRoutes.integrations) },
+        { text: labels.debrid, link: localeLink(locale, siteRoutes.debrid) },
+        { text: labels.metadataTracking, link: localeLink(locale, siteRoutes.metadataTracking) }
       ]
     },
     {
       text: labels.help,
       collapsed: false,
       items: [
-        { text: labels.troubleshooting, link: localeLink(locale, '/troubleshooting') },
-        { text: labels.faq, link: localeLink(locale, '/faq') },
-        { text: labels.officialLinks, link: localeLink(locale, '/official-links') }
+        { text: labels.troubleshooting, link: localeLink(locale, siteRoutes.troubleshooting) },
+        { text: labels.faq, link: localeLink(locale, siteRoutes.faq) },
+        { text: labels.officialLinks, link: localeLink(locale, siteRoutes.officialLinks) }
       ]
     }
   ]
@@ -133,6 +137,9 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   locales,
+  buildEnd: async (siteConfig) => {
+    await writeLegacyRedirects(siteConfig.outDir, base)
+  },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
     ['script', { type: 'module', src: `${base}sidebar-scroll.js?v=20260617e` }],

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useData, withBase } from 'vitepress'
+import { siteRoutes } from '../routes.mts'
 
 const { frontmatter } = useData()
 
@@ -8,29 +9,29 @@ const linkGroups = [
     id: 'footer-get-started',
     title: 'Get started',
     links: [
-      { text: 'Quick Start', href: '/quick-start' },
-      { text: 'Overview', href: '/overview' },
-      { text: 'Features', href: '/features' },
-      { text: 'Glossary', href: '/glossary' }
+      { text: 'Quick Start', href: siteRoutes.quickStart },
+      { text: 'Overview', href: siteRoutes.overview },
+      { text: 'Features', href: siteRoutes.features },
+      { text: 'Glossary', href: siteRoutes.glossary }
     ]
   },
   {
     id: 'footer-configure',
     title: 'Configure',
     links: [
-      { text: 'Addons', href: '/addons/' },
-      { text: 'Settings', href: '/settings/' },
-      { text: 'Integrations', href: '/integrations/' },
-      { text: 'Debrid', href: '/integrations/debrid' }
+      { text: 'Addons', href: siteRoutes.addons },
+      { text: 'Settings', href: siteRoutes.settings },
+      { text: 'Integrations', href: siteRoutes.integrations },
+      { text: 'Debrid', href: siteRoutes.debrid }
     ]
   },
   {
     id: 'footer-help',
     title: 'Help',
     links: [
-      { text: 'Troubleshooting', href: '/troubleshooting' },
-      { text: 'FAQ', href: '/faq' },
-      { text: 'Official Links', href: '/official-links' }
+      { text: 'Troubleshooting', href: siteRoutes.troubleshooting },
+      { text: 'FAQ', href: siteRoutes.faq },
+      { text: 'Official Links', href: siteRoutes.officialLinks }
     ]
   }
 ]
@@ -45,7 +46,7 @@ function backToTop() {
     <div class="site-footer__inner">
       <div class="site-footer__grid">
         <section class="site-footer__brand" aria-labelledby="footer-brand-title">
-          <a class="site-footer__wordmark" :href="withBase('/')">
+          <a class="site-footer__wordmark" :href="withBase(siteRoutes.home)">
             <img :src="withBase('/logo.svg')" alt="" width="38" height="38" />
             <span id="footer-brand-title">Nuvio <small>Wiki</small></span>
           </a>
@@ -54,7 +55,7 @@ function backToTop() {
             troubleshooting. Built by people who use the app every day.
           </p>
           <div class="site-footer__socials" aria-label="Community links">
-            <a :href="withBase('/official-links')" aria-label="Official links">
+            <a :href="withBase(siteRoutes.officialLinks)" aria-label="Official links">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="12" cy="12" r="9" />
                 <path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" />

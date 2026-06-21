@@ -17,5 +17,10 @@ Thank you for wanting to improve this community resource! Since this is an unoff
 - Mark platform-specific content with `[Android TV Only]`, `[TV Only]`, `[Android Mobile Only]`, `[Mobile Only]`, `[iOS Only]`, `[WebOS Only]`, or `[Tizen Only]`. The existing `[TV Optimized]` and `[Required for Mobile]` qualifiers are also supported. These exact labels automatically render as badges and are not case-sensitive.
 - Keep the **Disclaimer** visible in major entry points.
 
+## Adding or Renaming Pages
+- Add or update the canonical path in `docs/.vitepress/routes.mts`, then reuse that route in navigation or theme components.
+- When renaming or moving a published page, add its old path to `legacyRouteRedirects` in that same file so existing bookmarks keep working.
+- Run `npm run docs:build`. The build validates registered documents, Markdown links, navigation, cards, and other rendered internal links before deployment.
+
 ## Disclaimer
 Reminder: This project is **not** official. Do not contact Nuvio developers regarding issues with this wiki.

@@ -49,7 +49,7 @@ export const englishLabels: LocaleLabels = {
   player: 'Player',
   integrations: 'Integrations',
   debrid: 'Debrid',
-  metadataTracking: 'IMDb, MDBList, Trakt',
+  metadataTracking: 'TMDb, MDBList, Trakt',
   troubleshooting: 'Troubleshooting',
   faq: 'FAQ',
   features: 'Features',
