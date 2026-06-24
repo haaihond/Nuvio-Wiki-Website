@@ -1,4 +1,4 @@
-# ⚡ Quick Start Guide
+# Quick Start Guide
 
 Want to get Nuvio up and running in 10 minutes? Follow this sequence:
 
