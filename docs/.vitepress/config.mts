@@ -36,8 +36,7 @@ function buildNav(locale: WikiLocale): DefaultTheme.NavItem[] {
       items: [
         { text: labels.troubleshooting, link: localeLink(locale, siteRoutes.troubleshooting) },
         { text: labels.faq, link: localeLink(locale, siteRoutes.faq) },
-        { text: labels.features, link: localeLink(locale, siteRoutes.features) },
-        { text: labels.helpTranslate, link: 'https://github.com/haaihond/Nuvio-Wiki-Website/blob/main/TRANSLATING.md' }
+        { text: labels.features, link: localeLink(locale, siteRoutes.features) }
       ]
     }
   ]
@@ -133,26 +132,33 @@ function buildSidebar(locale: WikiLocale): DefaultTheme.SidebarItem[] {
   return sidebarItems
 }
 
-const locales = Object.fromEntries(
-  wikiLocales.map((locale) => [
-    locale.key,
-    {
-      label: locale.label,
-      lang: locale.lang,
-      dir: locale.dir,
-      link: localeRoot(locale),
-      ...(locale.key === 'root'
-        ? {}
-        : {
-            themeConfig: {
-              nav: buildNav(locale),
-              sidebar: buildSidebar(locale),
-              ...locale.themeConfig
-            }
-          })
-    }
-  ])
-)
+const locales = {
+  ...Object.fromEntries(
+    wikiLocales.map((locale) => [
+      locale.key,
+      {
+        label: locale.label,
+        lang: locale.lang,
+        dir: locale.dir,
+        link: localeRoot(locale),
+        ...(locale.key === 'root'
+          ? {}
+          : {
+              themeConfig: {
+                nav: buildNav(locale),
+                sidebar: buildSidebar(locale),
+                ...locale.themeConfig
+              }
+            })
+      }
+    ])
+  ),
+  translate: {
+    label: 'Help translate',
+    link: 'https://github.com/haaihond/Nuvio-Wiki-Website/blob/main/TRANSLATING.md',
+    lang: 'en-US'
+  }
+}
 
 export default defineConfig({
   lang: 'en-US',
