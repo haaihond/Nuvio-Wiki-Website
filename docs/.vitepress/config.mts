@@ -36,7 +36,8 @@ function buildNav(locale: WikiLocale): DefaultTheme.NavItem[] {
       items: [
         { text: labels.troubleshooting, link: localeLink(locale, siteRoutes.troubleshooting) },
         { text: labels.faq, link: localeLink(locale, siteRoutes.faq) },
-        { text: labels.features, link: localeLink(locale, siteRoutes.features) }
+        { text: labels.features, link: localeLink(locale, siteRoutes.features) },
+        { text: labels.helpTranslate, link: 'https://github.com/haaihond/Nuvio-Wiki-Website/blob/main/TRANSLATING.md' }
       ]
     }
   ]

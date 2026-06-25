@@ -28,6 +28,7 @@ export interface LocaleLabels {
   profiles: string
   collections: string
   officialLinks: string
+  helpTranslate: string
 }
 
 export interface WikiLocale {
@@ -66,7 +67,8 @@ export const englishLabels: LocaleLabels = {
   webos: 'WebOS',
   profiles: 'Profiles',
   collections: 'Collections',
-  officialLinks: 'Official Links'
+  officialLinks: 'Official Links',
+  helpTranslate: 'Help translate'
 }
 
 export const dutchLabels: LocaleLabels = {
@@ -96,7 +98,8 @@ export const dutchLabels: LocaleLabels = {
   webos: 'WebOS',
   profiles: 'Profielen',
   collections: 'Collecties',
-  officialLinks: 'Officiële links'
+  officialLinks: 'Officiële links',
+  helpTranslate: 'Help vertalen'
 }
 
 // Register a translation only after its docs/<key>/index.md and navigation pages exist.
