@@ -4,12 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "concurrently \"npm run docs:dev\" \"npm run server:dev\"",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs && node scripts/check-internal-links.mjs",
     "docs:preview": "vitepress preview docs",
-    "docs:fix": "node scripts/update-docs.mjs"
+    "docs:fix": "node scripts/update-docs.mjs",
+    "server:dev": "npm --prefix server run dev"
   },
   "devDependencies": {
+    "concurrently": "^10.0.3",
     "mermaid": "^11.15.0",
     "vitepress": "^1.6.4",
     "vitepress-sidebar": "^1.36.1"
