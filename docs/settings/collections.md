@@ -1,10 +1,45 @@
-
 # Collections
 
 > [!CAUTION]
 > Creating collections should be considered an advanced user feature (seriously, this is a warning). If you don't consider yourself an advanced user, it's recommended to copy one from [Nuvio's community collections](https://nuvio.tv/community-collections) instead.
 
+This guide covers two paths:
+
+- **[Using a Community Pack](#using-a-community-pack)** — copy a ready-made collection, little to no configuration required
+- **[Building a Custom Collection](#building-a-custom-collection)** — build one from scratch, for advanced users
+
 ---
+
+## Using a Community Pack
+
+[Nuvio's community collections](https://nuvio.tv/community-collections) page hosts pre-made packs you can install directly. This is the recommended starting point — most users never need to go further than this section.
+
+### Addon Requirements
+
+When browsing pre-made packs, you'll encounter two types of configurations:
+
+* **No Addons Needed:** These packs rely exclusively on native TMDB or Trakt sources. They will display "0 required addons" on their community page. Because they do not depend on external catalogs, they are typically a one-click install and work immediately without extra configuration.
+* **Required Addons:** These packs require specific third-party metadata addons to function. The community page will list the exact addons needed (e.g., AIOMetadata) and indicate if the addon is included or needs separate installation. Creators of these packs often provide a downloadable configuration file (usually a `.json` file) to build the custom catalogs for you.
+
+### Importing a Pack via AIOMetadata JSON
+
+If a community pack requires AIOMetadata and provides a configuration file, follow these steps to set it up:
+
+1. **Download the JSON File:** Locate the `.json` configuration file provided by the pack creator in the community collection details and download it to your device.
+2. **Upload to AIOMetadata:**
+   - Open your **AIOMetadata** addon configuration dashboard on the AIOMetadata instance of your choosing.
+   - Scroll down to the configuration section and select the **Import Configuration** option.
+   - Select the downloaded `.json` file to automatically populate the creator's pre-configured catalogs and filters.
+   - Add the required API keys for the catalog.
+   - Save and then install the addon in the Nuvio app.
+
+[Back to top](#Collections)
+
+---
+
+## Building a Custom Collection
+
+If you've outgrown community packs or want something fully bespoke, you can build a collection from scratch. The rest of this guide walks through that process.
 
 ### Understanding Collection Structure
 
@@ -42,7 +77,7 @@ graph LR
 
 ### Before You Start
 
-You'll need two things to create a collection:
+If you are building a custom collection from scratch rather than using a TMDB/Trakt-only pack, you'll need two things:
 
 1. **A metadata addon with your catalogs** already set up, containing the catalogs you want included. This guide assumes that's done.
 2. **Images or GIFs for your collection covers**, sourced from the internet or from [Nuvio's community covers](https://nuvio.tv/covers).
@@ -88,11 +123,11 @@ The Folders tab is where you define the subfolders ("blocks") that make up your 
 
 [Back to top](#Collections)
 
-#### Add Catalog
+#### Adding a Catalog
 
-Choose the addon that contains the catalog you want (e.g., AIOMetadata), then select the specific catalog you created with that addon.
+Choose the addon that contains the catalog you want (e.g., AIOMetadata), then select the specific catalog you created with that addon — this is the catalog you set up in [Before You Start](#before-you-start).
 
-#### Add TMDB
+#### Adding TMDB
 
 TMDB sources are configured across three groups of settings.
 
@@ -120,8 +155,6 @@ A couple of sources use different input fields instead of a standard ID:
 
 - **TMDB Discover**: instead of an ID, select one or more genres (e.g., Action, Horror, Science Fiction) from a dropdown. This dynamically builds a collection of media matching those categories from TMDB's database.
 - **Letterboxd List**: paste the full URL of the Letterboxd list you want to import. Use the exact link from your browser rather than searching for a separate ID.
-
-[Back to top](#Collections)
 
 #### Add Trakt
 
